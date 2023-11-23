@@ -1,0 +1,17 @@
+.squareContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    flex-wrap:wrap;
+    width:256px;
+    height:256px;
+}
+
+.etchElement {
+    display:flex;
+    flex-basis:auto;
+    /* width:2px;
+    height: 2px;
+    background-color: black; */
+}
