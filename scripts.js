@@ -3,14 +3,14 @@ let gridSize;
 let gridDimensions;
 
 //placeholder to get size for number of pixel boxes
-function getSize() {
-    const gridSize = window.prompt("What size grid would you like?");
+function getSize(value) {
+    const gridSize = value;
     return gridSize;
 }
 
 //parse grid dimensions
-function chooseDimensions() {
-    gridDimensions = getSize();
+function chooseDimensions(val) {
+    gridDimensions = getSize(val);
     gridSize = 1000/gridDimensions;
     console.log(gridSize);
     console.log(gridDimensions);
@@ -23,6 +23,7 @@ function makeGrid() {
         etchElement.className = "etchElement";
         etchElement.style.width = `${gridSize}px`;
         etchElement.style.height = `${gridSize}px`;
+        etchElement.style.backgroundColor = "white";
     
         etchElement.addEventListener("mouseover", () => {
             etchElement.style.backgroundColor = "gray";
@@ -31,9 +32,24 @@ function makeGrid() {
     }
 }
 
+let slider = document.querySelector(".slider");
+console.log("value " + `${slider.value}`);
+let testValue = slider.value;
+console.log(testValue);
+slider.innerHTML = slider.value;
+
+const resetButton = document.querySelector(".resetButton");
+resetButton.addEventListener("click", () => {
+    chooseDimensions(testValue);
+    makeGrid();
+});
 //create grid
-chooseDimensions();
+chooseDimensions(testValue);
 makeGrid();
+
+
+
+
 
 
 
