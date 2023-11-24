@@ -1,11 +1,20 @@
 const cont = document.querySelector(".squareContainer");
-console.log("Hello");
 
-for (let i = 0; i < 256; i++) {
+function getSize() {
+    const gridSize = window.prompt("What size grid would you like?");
+    return gridSize;
+}
+
+const gridDimensions = getSize();
+const gridSize = 1000/gridDimensions;
+console.log(gridSize);
+console.log(gridDimensions);
+
+for (let i = 0; i < (gridDimensions*gridDimensions); i++) {
     let etchElement = document.createElement("div");
     etchElement.className = "etchElement";
-    etchElement.style.width = "62.5px";
-    etchElement.style.height = "62.5px";
+    etchElement.style.width = `${gridSize}px`;
+    etchElement.style.height = `${gridSize}px`;
 
     etchElement.addEventListener("mouseover", () => {
         etchElement.style.backgroundColor = "gray";
@@ -13,6 +22,3 @@ for (let i = 0; i < 256; i++) {
 
     cont.appendChild(etchElement);
 }
-
-
-  
