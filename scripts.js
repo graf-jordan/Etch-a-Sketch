@@ -32,6 +32,11 @@ function makeGrid() {
     }
 }
 
+// this part at the bottom is for creating the logic
+// it should run functions to create on first pass and after that should reset on button click  
+// currently reseting buttons is partially unimplemented - need to delete divs before adding new ones  
+// this function needs to be added  
+
 let slider = document.querySelector(".slider");
 console.log("value " + `${slider.value}`);
 let testValue = slider.value;
