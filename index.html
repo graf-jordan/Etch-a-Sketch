@@ -8,15 +8,13 @@
     <link rel =" stylesheet" href="styles.css">
 </head>
 <body>
-    <div class = "titleBar">ETCH-A-SKETCH</div>
+    <div class = "titleBar otherBox">ETCH-A-SKETCH</div>
     <div class = "allItems">
-        <div class = "uiItems">
             <div class = "slidecontainer">
-                <div class = "slideValue"></div>
-                <input type="range" min="1" max="100" value="16" class="slider">
+                <div class = "slideValue otherBox">16</div>
+                <input type="range" min="1" max="100" value="16" class="slider" oninput="update()">
             </div>
-           <button class = "resetButton"><strong>RESET</strong></button>
-        </div>
+           <button class = "resetButton otherBox"><strong>RESET</strong></button>
         <div class = "squareContainer"></div>
     </div>
 </body>
