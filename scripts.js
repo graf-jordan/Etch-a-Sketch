@@ -10,7 +10,7 @@ function getSize(value) {
 
 //parse grid dimensions
 function chooseDimensions(val) {
-    gridDimensions = getSize(val);
+    gridDimensions = val;
     gridSize = 1000/gridDimensions;
     console.log(gridSize);
     console.log(gridDimensions);
@@ -18,6 +18,9 @@ function chooseDimensions(val) {
 
 //create dimensions of grid
 function makeGrid() {
+    while (cont.hasChildNodes()) {
+        cont.removeChild(cont.children[0]);
+    }
     for (let i = 0; i < (gridDimensions*gridDimensions); i++) {
         let etchElement = document.createElement("div");
         etchElement.className = "etchElement";
@@ -45,7 +48,7 @@ slider.innerHTML = slider.value;
 
 const resetButton = document.querySelector(".resetButton");
 resetButton.addEventListener("click", () => {
-    chooseDimensions(testValue);
+    chooseDimensions(slider.value);
     makeGrid();
 });
 //create grid
