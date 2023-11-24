@@ -1,17 +1,32 @@
-.squareContainer {
+*{
+    font-family:'Courier New', Courier, monospace;
+}
+
+body {
     display:flex;
     justify-content: center;
     align-items: center;
-    align-content:center;
+    flex-direction: column;
+    background-color: rgb(255, 173, 214);
+}
+
+.titleBar {
+    font-size:72px;
+}
+
+.squareContainer {
+    display:flex;
     flex-wrap:wrap;
-    width:256px;
-    height:256px;
+    width:500px;
+    height:500px;
+    border: solid 4px;
+    align-content:flex-start;
+    box-shadow: 10px 10px;
 }
 
 .etchElement {
     display:flex;
     flex-basis:auto;
-    /* width:2px;
-    height: 2px;
-    background-color: black; */
+    flex-grow:1;
+    padding:0px;
 }
