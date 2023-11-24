@@ -26,7 +26,6 @@ function makeGrid() {
         etchElement.className = "etchElement";
         etchElement.style.width = `${gridSize}px`;
         etchElement.style.height = `${gridSize}px`;
-        etchElement.style.backgroundColor = "white";
     
         etchElement.addEventListener("mouseover", () => {
             etchElement.style.backgroundColor = "gray";
@@ -35,17 +34,20 @@ function makeGrid() {
     }
 }
 
-// this part at the bottom is for creating the logic
-// it should run functions to create on first pass and after that should reset on button click  
-// currently reseting buttons is partially unimplemented - need to delete divs before adding new ones  
-// this function needs to be added  
+function update() {
+    let x = document.querySelector(".slider").value;
+    document.querySelector(".slideValue").innerText = x;
+}
 
+
+
+let sliderValue = document.querySelector(".slideValue");
 let slider = document.querySelector(".slider");
-console.log("value " + `${slider.value}`);
+slider.addEventListener("mouseover", () => {
+});
 let testValue = slider.value;
-console.log(testValue);
-slider.innerHTML = slider.value;
 
+//reset button for new grid
 const resetButton = document.querySelector(".resetButton");
 resetButton.addEventListener("click", () => {
     chooseDimensions(slider.value);
